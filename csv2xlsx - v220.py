@@ -3,7 +3,6 @@ import os, tkinter, tkinter.filedialog, tkinter.messagebox
 import pandas as pd
 import openpyxl
 from openpyxl.styles import Font
-import subprocess
 
 
 # ファイル選択ダイアログの表示
@@ -62,11 +61,3 @@ wb1.save(file2)
 # 処理ファイル名の出力
 files = '変換前 '+file1+'\n変換後 '+file2
 tkinter.messagebox.showinfo('エクセル変換プログラム',files)
-
-# Excelを起動する
-try:
-    subprocess.Popen([r'C:\Program Files (x86)\Microsoft Office\root\Office16\EXCEL.EXE', file2])
-except:
-    subprocess.Popen([r'C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE', file2])
-else:
-    pass
